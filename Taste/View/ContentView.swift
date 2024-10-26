@@ -6,16 +6,22 @@
 //
 
 import SwiftUI
+import ASCollectionView
 
 struct ContentView: View {
+    @ObservedObject var viewModel = FeedItemViewModel()
+    
+    
+    var feedSections: ASTableViewSection<Int> {
+        ASTableViewSection(id: 0, data: viewModel.items, contentBuilder: { item, _ in
+            FeedItemCell(item: item)
+        })
+    }
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            ASTableView(section: feedSections)
         }
-        .padding()
     }
 }
 

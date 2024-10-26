@@ -7,12 +7,33 @@
 
 import SwiftUI
 
-struct TikTockSwipe: View {
+struct TikTokSwipingBehavior: View {
+    @ObservedObject var viewModel = InsightViewModel()
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView(.vertical) {
+            LazyVStack(spacing: 0) {
+                ForEach(viewModel.items) { item in
+                    ZStack {
+                        Rectangle()
+                            .fill(Color.black.opacity(0.9))
+                            .frame(
+                                width: UIScreen.main.bounds.width,
+                                height: UIScreen.main.bounds.height
+                                )
+                           
+                        InsightViewItem(item: item)
+                    }
+                }
+            }
+            .scrollTargetLayout()
+        }
+        .scrollTargetBehavior(.paging)
+        .ignoresSafeArea()
     }
 }
 
 #Preview {
-    TikTockSwipe()
+    TikTokSwipingBehavior().preferredColorScheme(.dark)
 }

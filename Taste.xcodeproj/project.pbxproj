@@ -14,6 +14,51 @@
 		30FF13022CA66A9B00776D87 /* TasteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF13012CA66A9B00776D87 /* TasteTests.swift */; };
 		30FF130C2CA66A9B00776D87 /* TasteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF130B2CA66A9B00776D87 /* TasteUITests.swift */; };
 		30FF130E2CA66A9B00776D87 /* TasteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF130D2CA66A9B00776D87 /* TasteUITestsLaunchTests.swift */; };
+		30FF131F2CA6717F00776D87 /* FeedItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF131E2CA6717F00776D87 /* FeedItemCell.swift */; };
+		30FF13212CA671AD00776D87 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF13202CA671AD00776D87 /* FeedItem.swift */; };
+		30FF13232CA6742800776D87 /* FeedItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF13222CA6742800776D87 /* FeedItemViewModel.swift */; };
+		30FF132A2CA67AC800776D87 /* ASCollectionView in Frameworks */ = {isa = PBXBuildFile; productRef = 30FF13292CA67AC800776D87 /* ASCollectionView */; };
+		30FF134B2CA7D0D900776D87 /* arizona-cardinals-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF132B2CA7D0D900776D87 /* arizona-cardinals-logo.png */; };
+		30FF134C2CA7D0D900776D87 /* atlanta-falcons-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF132C2CA7D0D900776D87 /* atlanta-falcons-logo.png */; };
+		30FF134D2CA7D0D900776D87 /* baltimore-ravens-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF132D2CA7D0D900776D87 /* baltimore-ravens-logo.png */; };
+		30FF134E2CA7D0D900776D87 /* buffalo-bills-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF132E2CA7D0D900776D87 /* buffalo-bills-logo.png */; };
+		30FF134F2CA7D0D900776D87 /* carolina-panthers-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF132F2CA7D0D900776D87 /* carolina-panthers-logo.png */; };
+		30FF13502CA7D0D900776D87 /* chicago-bears-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF13302CA7D0D900776D87 /* chicago-bears-logo.png */; };
+		30FF13512CA7D0D900776D87 /* cincinnati-bengals-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF13312CA7D0D900776D87 /* cincinnati-bengals-logo.png */; };
+		30FF13522CA7D0D900776D87 /* cleveland-browns-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF13322CA7D0D900776D87 /* cleveland-browns-logo.png */; };
+		30FF13532CA7D0D900776D87 /* dallas-cowboys-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF13332CA7D0D900776D87 /* dallas-cowboys-logo.png */; };
+		30FF13542CA7D0D900776D87 /* denver-broncos-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF13342CA7D0D900776D87 /* denver-broncos-logo.png */; };
+		30FF13552CA7D0D900776D87 /* detroit-lions-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF13352CA7D0D900776D87 /* detroit-lions-logo.png */; };
+		30FF13562CA7D0D900776D87 /* green-bay-packers-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF13362CA7D0D900776D87 /* green-bay-packers-logo.png */; };
+		30FF13572CA7D0D900776D87 /* houston-texans-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF13372CA7D0D900776D87 /* houston-texans-logo.png */; };
+		30FF13582CA7D0D900776D87 /* indianapolis-colts-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF13382CA7D0D900776D87 /* indianapolis-colts-logo.png */; };
+		30FF13592CA7D0D900776D87 /* jacksonville-jaguars-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF13392CA7D0D900776D87 /* jacksonville-jaguars-logo.png */; };
+		30FF135A2CA7D0D900776D87 /* kansas-city-chiefs-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF133A2CA7D0D900776D87 /* kansas-city-chiefs-logo.png */; };
+		30FF135B2CA7D0D900776D87 /* los-angeles-chargers-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF133B2CA7D0D900776D87 /* los-angeles-chargers-logo.png */; };
+		30FF135C2CA7D0D900776D87 /* los-angeles-rams-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF133C2CA7D0D900776D87 /* los-angeles-rams-logo.png */; };
+		30FF135D2CA7D0D900776D87 /* miami-dolphins-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF133D2CA7D0D900776D87 /* miami-dolphins-logo.png */; };
+		30FF135E2CA7D0D900776D87 /* minnesota-vikings-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF133E2CA7D0D900776D87 /* minnesota-vikings-logo.png */; };
+		30FF135F2CA7D0D900776D87 /* new-orleans-saints-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF133F2CA7D0D900776D87 /* new-orleans-saints-logo.png */; };
+		30FF13602CA7D0D900776D87 /* new-york-giants-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF13402CA7D0D900776D87 /* new-york-giants-logo.png */; };
+		30FF13612CA7D0D900776D87 /* new-york-jets-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF13412CA7D0D900776D87 /* new-york-jets-logo.png */; };
+		30FF13622CA7D0D900776D87 /* oakland-raiders-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF13422CA7D0D900776D87 /* oakland-raiders-logo.png */; };
+		30FF13632CA7D0D900776D87 /* philadelphia-eagles-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF13432CA7D0D900776D87 /* philadelphia-eagles-logo.png */; };
+		30FF13642CA7D0D900776D87 /* pittsburgh-steelers-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF13442CA7D0D900776D87 /* pittsburgh-steelers-logo.png */; };
+		30FF13652CA7D0D900776D87 /* san-francisco-49ers-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF13452CA7D0D900776D87 /* san-francisco-49ers-logo.png */; };
+		30FF13662CA7D0D900776D87 /* seattle-seahawks-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF13462CA7D0D900776D87 /* seattle-seahawks-logo.png */; };
+		30FF13672CA7D0D900776D87 /* tampa-bay-buccaneers-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF13472CA7D0D900776D87 /* tampa-bay-buccaneers-logo.png */; };
+		30FF13682CA7D0D900776D87 /* tennessee-titans-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF13482CA7D0D900776D87 /* tennessee-titans-logo.png */; };
+		30FF13692CA7D0D900776D87 /* washington-redskins-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FF13492CA7D0D900776D87 /* washington-redskins-logo.png */; };
+		30FF136B2CA7DFAF00776D87 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF136A2CA7DFAF00776D87 /* LikeButton.swift */; };
+		30FF136D2CA7E07C00776D87 /* DotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF136C2CA7E07C00776D87 /* DotsView.swift */; };
+		30FF136F2CC4305A00776D87 /* TikTockSwipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF136E2CC4305A00776D87 /* TikTockSwipe.swift */; };
+		30FF13712CC473AC00776D87 /* InsightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF13702CC473AC00776D87 /* InsightViewModel.swift */; };
+		30FF13732CC479B100776D87 /* InsightViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF13722CC479B100776D87 /* InsightViewItem.swift */; };
+		30FF13752CC4A59F00776D87 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF13742CC4A59F00776D87 /* ChartView.swift */; };
+		30FF13772CCB1A1000776D87 /* WRStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF13762CCB1A1000776D87 /* WRStats.swift */; };
+		30FF13792CCB1A5700776D87 /* QBStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF13782CCB1A5700776D87 /* QBStats.swift */; };
+		30FF137B2CCB1AC400776D87 /* TeamStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF137A2CCB1AC400776D87 /* TeamStats.swift */; };
+		30FF137D2CCB1F8700776D87 /* QbEpaBlitzAgainstDefBlitz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF137C2CCB1F8700776D87 /* QbEpaBlitzAgainstDefBlitz.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +89,50 @@
 		30FF13072CA66A9B00776D87 /* TasteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TasteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30FF130B2CA66A9B00776D87 /* TasteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteUITests.swift; sourceTree = "<group>"; };
 		30FF130D2CA66A9B00776D87 /* TasteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		30FF131E2CA6717F00776D87 /* FeedItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemCell.swift; sourceTree = "<group>"; };
+		30FF13202CA671AD00776D87 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		30FF13222CA6742800776D87 /* FeedItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemViewModel.swift; sourceTree = "<group>"; };
+		30FF132B2CA7D0D900776D87 /* arizona-cardinals-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arizona-cardinals-logo.png"; sourceTree = "<group>"; };
+		30FF132C2CA7D0D900776D87 /* atlanta-falcons-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "atlanta-falcons-logo.png"; sourceTree = "<group>"; };
+		30FF132D2CA7D0D900776D87 /* baltimore-ravens-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "baltimore-ravens-logo.png"; sourceTree = "<group>"; };
+		30FF132E2CA7D0D900776D87 /* buffalo-bills-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buffalo-bills-logo.png"; sourceTree = "<group>"; };
+		30FF132F2CA7D0D900776D87 /* carolina-panthers-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "carolina-panthers-logo.png"; sourceTree = "<group>"; };
+		30FF13302CA7D0D900776D87 /* chicago-bears-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chicago-bears-logo.png"; sourceTree = "<group>"; };
+		30FF13312CA7D0D900776D87 /* cincinnati-bengals-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cincinnati-bengals-logo.png"; sourceTree = "<group>"; };
+		30FF13322CA7D0D900776D87 /* cleveland-browns-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cleveland-browns-logo.png"; sourceTree = "<group>"; };
+		30FF13332CA7D0D900776D87 /* dallas-cowboys-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dallas-cowboys-logo.png"; sourceTree = "<group>"; };
+		30FF13342CA7D0D900776D87 /* denver-broncos-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "denver-broncos-logo.png"; sourceTree = "<group>"; };
+		30FF13352CA7D0D900776D87 /* detroit-lions-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detroit-lions-logo.png"; sourceTree = "<group>"; };
+		30FF13362CA7D0D900776D87 /* green-bay-packers-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-bay-packers-logo.png"; sourceTree = "<group>"; };
+		30FF13372CA7D0D900776D87 /* houston-texans-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "houston-texans-logo.png"; sourceTree = "<group>"; };
+		30FF13382CA7D0D900776D87 /* indianapolis-colts-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "indianapolis-colts-logo.png"; sourceTree = "<group>"; };
+		30FF13392CA7D0D900776D87 /* jacksonville-jaguars-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jacksonville-jaguars-logo.png"; sourceTree = "<group>"; };
+		30FF133A2CA7D0D900776D87 /* kansas-city-chiefs-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kansas-city-chiefs-logo.png"; sourceTree = "<group>"; };
+		30FF133B2CA7D0D900776D87 /* los-angeles-chargers-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "los-angeles-chargers-logo.png"; sourceTree = "<group>"; };
+		30FF133C2CA7D0D900776D87 /* los-angeles-rams-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "los-angeles-rams-logo.png"; sourceTree = "<group>"; };
+		30FF133D2CA7D0D900776D87 /* miami-dolphins-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "miami-dolphins-logo.png"; sourceTree = "<group>"; };
+		30FF133E2CA7D0D900776D87 /* minnesota-vikings-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minnesota-vikings-logo.png"; sourceTree = "<group>"; };
+		30FF133F2CA7D0D900776D87 /* new-orleans-saints-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new-orleans-saints-logo.png"; sourceTree = "<group>"; };
+		30FF13402CA7D0D900776D87 /* new-york-giants-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new-york-giants-logo.png"; sourceTree = "<group>"; };
+		30FF13412CA7D0D900776D87 /* new-york-jets-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new-york-jets-logo.png"; sourceTree = "<group>"; };
+		30FF13422CA7D0D900776D87 /* oakland-raiders-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oakland-raiders-logo.png"; sourceTree = "<group>"; };
+		30FF13432CA7D0D900776D87 /* philadelphia-eagles-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "philadelphia-eagles-logo.png"; sourceTree = "<group>"; };
+		30FF13442CA7D0D900776D87 /* pittsburgh-steelers-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pittsburgh-steelers-logo.png"; sourceTree = "<group>"; };
+		30FF13452CA7D0D900776D87 /* san-francisco-49ers-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "san-francisco-49ers-logo.png"; sourceTree = "<group>"; };
+		30FF13462CA7D0D900776D87 /* seattle-seahawks-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "seattle-seahawks-logo.png"; sourceTree = "<group>"; };
+		30FF13472CA7D0D900776D87 /* tampa-bay-buccaneers-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tampa-bay-buccaneers-logo.png"; sourceTree = "<group>"; };
+		30FF13482CA7D0D900776D87 /* tennessee-titans-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tennessee-titans-logo.png"; sourceTree = "<group>"; };
+		30FF13492CA7D0D900776D87 /* washington-redskins-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "washington-redskins-logo.png"; sourceTree = "<group>"; };
+		30FF136A2CA7DFAF00776D87 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
+		30FF136C2CA7E07C00776D87 /* DotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotsView.swift; sourceTree = "<group>"; };
+		30FF136E2CC4305A00776D87 /* TikTockSwipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTockSwipe.swift; sourceTree = "<group>"; };
+		30FF13702CC473AC00776D87 /* InsightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightViewModel.swift; sourceTree = "<group>"; };
+		30FF13722CC479B100776D87 /* InsightViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightViewItem.swift; sourceTree = "<group>"; };
+		30FF13742CC4A59F00776D87 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		30FF13762CCB1A1000776D87 /* WRStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WRStats.swift; sourceTree = "<group>"; };
+		30FF13782CCB1A5700776D87 /* QBStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QBStats.swift; sourceTree = "<group>"; };
+		30FF137A2CCB1AC400776D87 /* TeamStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamStats.swift; sourceTree = "<group>"; };
+		30FF137C2CCB1F8700776D87 /* QbEpaBlitzAgainstDefBlitz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QbEpaBlitzAgainstDefBlitz.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30FF132A2CA67AC800776D87 /* ASCollectionView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,8 +184,11 @@
 		30FF12EF2CA66A9900776D87 /* Taste */ = {
 			isa = PBXGroup;
 			children = (
+				30FF134A2CA7D0D900776D87 /* images */,
+				30FF131A2CA66FD900776D87 /* Model */,
+				30FF131B2CA66FE200776D87 /* View */,
+				30FF131C2CA66FE800776D87 /* ViewModel */,
 				30FF12F02CA66A9900776D87 /* TasteApp.swift */,
-				30FF12F22CA66A9900776D87 /* ContentView.swift */,
 				30FF12F42CA66A9B00776D87 /* Assets.xcassets */,
 				30FF12F62CA66A9B00776D87 /* Preview Content */,
 			);
@@ -127,6 +220,79 @@
 			path = TasteUITests;
 			sourceTree = "<group>";
 		};
+		30FF131A2CA66FD900776D87 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				30FF13202CA671AD00776D87 /* FeedItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		30FF131B2CA66FE200776D87 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				30FF12F22CA66A9900776D87 /* ContentView.swift */,
+				30FF131E2CA6717F00776D87 /* FeedItemCell.swift */,
+				30FF136A2CA7DFAF00776D87 /* LikeButton.swift */,
+				30FF136C2CA7E07C00776D87 /* DotsView.swift */,
+				30FF136E2CC4305A00776D87 /* TikTockSwipe.swift */,
+				30FF13722CC479B100776D87 /* InsightViewItem.swift */,
+				30FF13742CC4A59F00776D87 /* ChartView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		30FF131C2CA66FE800776D87 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				30FF13222CA6742800776D87 /* FeedItemViewModel.swift */,
+				30FF13702CC473AC00776D87 /* InsightViewModel.swift */,
+				30FF13762CCB1A1000776D87 /* WRStats.swift */,
+				30FF13782CCB1A5700776D87 /* QBStats.swift */,
+				30FF137A2CCB1AC400776D87 /* TeamStats.swift */,
+				30FF137C2CCB1F8700776D87 /* QbEpaBlitzAgainstDefBlitz.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		30FF134A2CA7D0D900776D87 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				30FF132B2CA7D0D900776D87 /* arizona-cardinals-logo.png */,
+				30FF132C2CA7D0D900776D87 /* atlanta-falcons-logo.png */,
+				30FF132D2CA7D0D900776D87 /* baltimore-ravens-logo.png */,
+				30FF132E2CA7D0D900776D87 /* buffalo-bills-logo.png */,
+				30FF132F2CA7D0D900776D87 /* carolina-panthers-logo.png */,
+				30FF13302CA7D0D900776D87 /* chicago-bears-logo.png */,
+				30FF13312CA7D0D900776D87 /* cincinnati-bengals-logo.png */,
+				30FF13322CA7D0D900776D87 /* cleveland-browns-logo.png */,
+				30FF13332CA7D0D900776D87 /* dallas-cowboys-logo.png */,
+				30FF13342CA7D0D900776D87 /* denver-broncos-logo.png */,
+				30FF13352CA7D0D900776D87 /* detroit-lions-logo.png */,
+				30FF13362CA7D0D900776D87 /* green-bay-packers-logo.png */,
+				30FF13372CA7D0D900776D87 /* houston-texans-logo.png */,
+				30FF13382CA7D0D900776D87 /* indianapolis-colts-logo.png */,
+				30FF13392CA7D0D900776D87 /* jacksonville-jaguars-logo.png */,
+				30FF133A2CA7D0D900776D87 /* kansas-city-chiefs-logo.png */,
+				30FF133B2CA7D0D900776D87 /* los-angeles-chargers-logo.png */,
+				30FF133C2CA7D0D900776D87 /* los-angeles-rams-logo.png */,
+				30FF133D2CA7D0D900776D87 /* miami-dolphins-logo.png */,
+				30FF133E2CA7D0D900776D87 /* minnesota-vikings-logo.png */,
+				30FF133F2CA7D0D900776D87 /* new-orleans-saints-logo.png */,
+				30FF13402CA7D0D900776D87 /* new-york-giants-logo.png */,
+				30FF13412CA7D0D900776D87 /* new-york-jets-logo.png */,
+				30FF13422CA7D0D900776D87 /* oakland-raiders-logo.png */,
+				30FF13432CA7D0D900776D87 /* philadelphia-eagles-logo.png */,
+				30FF13442CA7D0D900776D87 /* pittsburgh-steelers-logo.png */,
+				30FF13452CA7D0D900776D87 /* san-francisco-49ers-logo.png */,
+				30FF13462CA7D0D900776D87 /* seattle-seahawks-logo.png */,
+				30FF13472CA7D0D900776D87 /* tampa-bay-buccaneers-logo.png */,
+				30FF13482CA7D0D900776D87 /* tennessee-titans-logo.png */,
+				30FF13492CA7D0D900776D87 /* washington-redskins-logo.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +309,9 @@
 			dependencies = (
 			);
 			name = Taste;
+			packageProductDependencies = (
+				30FF13292CA67AC800776D87 /* ASCollectionView */,
+			);
 			productName = Taste;
 			productReference = 30FF12ED2CA66A9900776D87 /* Taste.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +384,9 @@
 				Base,
 			);
 			mainGroup = 30FF12E42CA66A9900776D87;
+			packageReferences = (
+				30FF13282CA67AC800776D87 /* XCRemoteSwiftPackageReference "ASCollectionView" */,
+			);
 			productRefGroup = 30FF12EE2CA66A9900776D87 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,7 +404,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				30FF12F82CA66A9B00776D87 /* Preview Assets.xcassets in Resources */,
+				30FF13642CA7D0D900776D87 /* pittsburgh-steelers-logo.png in Resources */,
+				30FF13612CA7D0D900776D87 /* new-york-jets-logo.png in Resources */,
+				30FF13622CA7D0D900776D87 /* oakland-raiders-logo.png in Resources */,
+				30FF134C2CA7D0D900776D87 /* atlanta-falcons-logo.png in Resources */,
+				30FF135A2CA7D0D900776D87 /* kansas-city-chiefs-logo.png in Resources */,
+				30FF13572CA7D0D900776D87 /* houston-texans-logo.png in Resources */,
+				30FF134F2CA7D0D900776D87 /* carolina-panthers-logo.png in Resources */,
+				30FF13512CA7D0D900776D87 /* cincinnati-bengals-logo.png in Resources */,
 				30FF12F52CA66A9B00776D87 /* Assets.xcassets in Resources */,
+				30FF134D2CA7D0D900776D87 /* baltimore-ravens-logo.png in Resources */,
+				30FF134B2CA7D0D900776D87 /* arizona-cardinals-logo.png in Resources */,
+				30FF135E2CA7D0D900776D87 /* minnesota-vikings-logo.png in Resources */,
+				30FF13562CA7D0D900776D87 /* green-bay-packers-logo.png in Resources */,
+				30FF13582CA7D0D900776D87 /* indianapolis-colts-logo.png in Resources */,
+				30FF13652CA7D0D900776D87 /* san-francisco-49ers-logo.png in Resources */,
+				30FF13632CA7D0D900776D87 /* philadelphia-eagles-logo.png in Resources */,
+				30FF13692CA7D0D900776D87 /* washington-redskins-logo.png in Resources */,
+				30FF134E2CA7D0D900776D87 /* buffalo-bills-logo.png in Resources */,
+				30FF135C2CA7D0D900776D87 /* los-angeles-rams-logo.png in Resources */,
+				30FF135F2CA7D0D900776D87 /* new-orleans-saints-logo.png in Resources */,
+				30FF13682CA7D0D900776D87 /* tennessee-titans-logo.png in Resources */,
+				30FF13522CA7D0D900776D87 /* cleveland-browns-logo.png in Resources */,
+				30FF13602CA7D0D900776D87 /* new-york-giants-logo.png in Resources */,
+				30FF13502CA7D0D900776D87 /* chicago-bears-logo.png in Resources */,
+				30FF13532CA7D0D900776D87 /* dallas-cowboys-logo.png in Resources */,
+				30FF135B2CA7D0D900776D87 /* los-angeles-chargers-logo.png in Resources */,
+				30FF135D2CA7D0D900776D87 /* miami-dolphins-logo.png in Resources */,
+				30FF13542CA7D0D900776D87 /* denver-broncos-logo.png in Resources */,
+				30FF13552CA7D0D900776D87 /* detroit-lions-logo.png in Resources */,
+				30FF13662CA7D0D900776D87 /* seattle-seahawks-logo.png in Resources */,
+				30FF13592CA7D0D900776D87 /* jacksonville-jaguars-logo.png in Resources */,
+				30FF13672CA7D0D900776D87 /* tampa-bay-buccaneers-logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +460,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30FF13792CCB1A5700776D87 /* QBStats.swift in Sources */,
+				30FF13772CCB1A1000776D87 /* WRStats.swift in Sources */,
+				30FF13212CA671AD00776D87 /* FeedItem.swift in Sources */,
+				30FF131F2CA6717F00776D87 /* FeedItemCell.swift in Sources */,
+				30FF13712CC473AC00776D87 /* InsightViewModel.swift in Sources */,
+				30FF136D2CA7E07C00776D87 /* DotsView.swift in Sources */,
 				30FF12F32CA66A9900776D87 /* ContentView.swift in Sources */,
+				30FF13232CA6742800776D87 /* FeedItemViewModel.swift in Sources */,
+				30FF137B2CCB1AC400776D87 /* TeamStats.swift in Sources */,
+				30FF13732CC479B100776D87 /* InsightViewItem.swift in Sources */,
+				30FF13752CC4A59F00776D87 /* ChartView.swift in Sources */,
+				30FF136B2CA7DFAF00776D87 /* LikeButton.swift in Sources */,
+				30FF136F2CC4305A00776D87 /* TikTockSwipe.swift in Sources */,
 				30FF12F12CA66A9900776D87 /* TasteApp.swift in Sources */,
+				30FF137D2CCB1F8700776D87 /* QbEpaBlitzAgainstDefBlitz.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +804,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		30FF13282CA67AC800776D87 /* XCRemoteSwiftPackageReference "ASCollectionView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apptekstudios/ASCollectionView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		30FF13292CA67AC800776D87 /* ASCollectionView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30FF13282CA67AC800776D87 /* XCRemoteSwiftPackageReference "ASCollectionView" */;
+			productName = ASCollectionView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 30FF12E52CA66A9900776D87 /* Project object */;
 }
