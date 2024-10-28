@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3056C96E2CCF4B9000D489EA /* NarrativeInsight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3056C96D2CCF4B9000D489EA /* NarrativeInsight.swift */; };
+		3056C9702CCF4BAE00D489EA /* InsightType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3056C96F2CCF4BAE00D489EA /* InsightType.swift */; };
+		3056C9722CCF4BC200D489EA /* InsightDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3056C9712CCF4BC200D489EA /* InsightDataPoint.swift */; };
+		3056C9742CCF4BD500D489EA /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3056C9732CCF4BD500D489EA /* Game.swift */; };
+		3056C9762CCF4BE000D489EA /* NFLTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3056C9752CCF4BE000D489EA /* NFLTeam.swift */; };
 		30FF12F12CA66A9900776D87 /* TasteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF12F02CA66A9900776D87 /* TasteApp.swift */; };
 		30FF12F32CA66A9900776D87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF12F22CA66A9900776D87 /* ContentView.swift */; };
 		30FF12F52CA66A9B00776D87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30FF12F42CA66A9B00776D87 /* Assets.xcassets */; };
@@ -79,6 +84,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3056C96D2CCF4B9000D489EA /* NarrativeInsight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarrativeInsight.swift; sourceTree = "<group>"; };
+		3056C96F2CCF4BAE00D489EA /* InsightType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightType.swift; sourceTree = "<group>"; };
+		3056C9712CCF4BC200D489EA /* InsightDataPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightDataPoint.swift; sourceTree = "<group>"; };
+		3056C9732CCF4BD500D489EA /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		3056C9752CCF4BE000D489EA /* NFLTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFLTeam.swift; sourceTree = "<group>"; };
 		30FF12ED2CA66A9900776D87 /* Taste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30FF12F02CA66A9900776D87 /* TasteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteApp.swift; sourceTree = "<group>"; };
 		30FF12F22CA66A9900776D87 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -224,6 +234,11 @@
 			isa = PBXGroup;
 			children = (
 				30FF13202CA671AD00776D87 /* FeedItem.swift */,
+				3056C96D2CCF4B9000D489EA /* NarrativeInsight.swift */,
+				3056C96F2CCF4BAE00D489EA /* InsightType.swift */,
+				3056C9712CCF4BC200D489EA /* InsightDataPoint.swift */,
+				3056C9732CCF4BD500D489EA /* Game.swift */,
+				3056C9752CCF4BE000D489EA /* NFLTeam.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -461,16 +476,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				30FF13792CCB1A5700776D87 /* QBStats.swift in Sources */,
+				3056C9702CCF4BAE00D489EA /* InsightType.swift in Sources */,
 				30FF13772CCB1A1000776D87 /* WRStats.swift in Sources */,
+				3056C9722CCF4BC200D489EA /* InsightDataPoint.swift in Sources */,
 				30FF13212CA671AD00776D87 /* FeedItem.swift in Sources */,
+				3056C96E2CCF4B9000D489EA /* NarrativeInsight.swift in Sources */,
 				30FF131F2CA6717F00776D87 /* FeedItemCell.swift in Sources */,
 				30FF13712CC473AC00776D87 /* InsightViewModel.swift in Sources */,
 				30FF136D2CA7E07C00776D87 /* DotsView.swift in Sources */,
 				30FF12F32CA66A9900776D87 /* ContentView.swift in Sources */,
 				30FF13232CA6742800776D87 /* FeedItemViewModel.swift in Sources */,
+				3056C9762CCF4BE000D489EA /* NFLTeam.swift in Sources */,
 				30FF137B2CCB1AC400776D87 /* TeamStats.swift in Sources */,
 				30FF13732CC479B100776D87 /* InsightViewItem.swift in Sources */,
 				30FF13752CC4A59F00776D87 /* ChartView.swift in Sources */,
+				3056C9742CCF4BD500D489EA /* Game.swift in Sources */,
 				30FF136B2CA7DFAF00776D87 /* LikeButton.swift in Sources */,
 				30FF136F2CC4305A00776D87 /* TikTockSwipe.swift in Sources */,
 				30FF12F12CA66A9900776D87 /* TasteApp.swift in Sources */,
