@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct InsightDataPoint : Identifiable{
+struct InsightDataPoint : Identifiable, Hashable{
     let id: Int
     let xValue: Float
     let xCode: String

@@ -7,8 +7,13 @@
 
 import Foundation
 
-struct NarrativeInsight : Identifiable {
+struct NarrativeInsight : Identifiable, Hashable {
+    static func == (lhs: NarrativeInsight, rhs: NarrativeInsight) -> Bool {
+        return true
+    }
+    
     var id: Int
+    var position: Int
     let insightType: InsightType
     let insightDesc: String
     let insightRubric: String
@@ -20,7 +25,6 @@ struct NarrativeInsight : Identifiable {
     let gameTitle: String
     let game: Game
     let data: [InsightDataPoint]
-    let dataPoint: InsightDataPoint
     let compellingScore: Float
     let embedding: String
     let bets: Array<String>

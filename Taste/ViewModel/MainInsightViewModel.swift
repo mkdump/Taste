@@ -6,12 +6,23 @@
 //
 
 import Foundation
+import Combine
 
-class InsightViewModel: ObservableObject {
+class MainInsightViewModel: ObservableObject {
     @Published var items = [NarrativeInsight]()
     
+    enum ViewState {
+        case START
+        case LOADING
+        case SUCCESS(items: [NarrativeInsight])
+        case FAILURE(error: String)
+    }
+    
+    @Published var currentState: ViewState = .START
+        private var cancelables = Set<AnyCancellable>()
+    
     init() {
-        getInsights()
+        loadInsights()
     }
     
     func getTeamName(team: NFLTeam) -> String {
@@ -129,20 +140,48 @@ class InsightViewModel: ObservableObject {
         
         var insights = [NarrativeInsight]()
         
-        var index = 0
-        
         for i in 0..<items.count
         {
-            insights.append(getNextInsight())
-            index = index + 1
-            if index > 4 { break }
+            var insight = getNextInsight()
+            insight.position = i
+            // pagedItems.append(insight)
+            insights.append(insight)
+            if i > 10 { break }
         }
         
         return insights
     }
     
+    func loadInsights() {
+        self.currentState = .LOADING
+            APIService.shared.getInsights()
+                    .sink { completion in
+                        switch completion {
+                        case .finished:
+                            print("Execution Finihsed.")
+                        case .failure(let error):
+                            self.currentState = .FAILURE(error: error.localizedDescription)
+                        }
+                    } receiveValue: { items in
+                        var insights = [NarrativeInsight]()
+                        var index = 0
+                        items.forEach { insight in
+                            let homeTeam = self.getNFLTeam(team: insight.homeTeamCode!)
+                            let awayTeam = self.getNFLTeam(team: insight.awayTeamCode!)
+                            
+                            let item1 = NarrativeInsight(id: insight.id, position: index, insightType: InsightType(rawValue: insight.type) ?? InsightType.QbEpaBlitz, insightDesc: insight.description, insightRubric: insight.rubric ?? "", headline: insight.headline , text: insight.text, predictivePower: Double(insight.predictivePower), teamId: 32, players: [2022], gameTitle: insight.gameTitle, game: Game(homeTeam: homeTeam, homeTeamName: self.getTeamName(team: homeTeam), awayTeam: awayTeam, awayTeamName: self.getTeamName(team: awayTeam)), data: [], compellingScore: Float(insight.compellingScore), embedding: "", bets: Array())
+                            
+                            insights.append(item1)
+                            
+                            index = index + 1
+                        }
+                        
+                        self.currentState = .SUCCESS(items: insights)
+                    }.store(in: &cancelables)
+    }
+    
     func getInsights() {
-        let urlString = "http://localhost:3000/insights"
+        let urlString = "http://localhost:3000/insights?week=16"
         if let url = URL(string: urlString) {
             
             URLSession
@@ -159,56 +198,28 @@ class InsightViewModel: ObservableObject {
                         } else {
                             
                             print("got a response")
+                        
                             let decoder = JSONDecoder()
                             
                             if let data = data,
-                               let qbInsights = try? decoder.decode([QbEpaBlitzAgainstDefBlitz].self, from: data) {
-                            
-                                let insights = qbInsights;
-                                
-                                var index = 0
-                                var dataPoints: [InsightDataPoint] = []
-                                var dataIndex = 0
-                                
-                                for dataInsight in qbInsights {
-                                    let xText = dataInsight.passerName
-                                    let yText = dataInsight.defense
-                                    
-                                    let dataPoint = InsightDataPoint(id: dataIndex, xValue: Float(dataInsight.blitzEpa), xCode: "BLITZ_EPA", xText: xText, xPercentile: Float(dataInsight.blitzEpaPercentile), xDefinition: "Blitz EPA", yValue: Float(dataInsight.blitzRate), yCode: "BLITZ_RATE", yText: yText, yPercentile: Float(dataInsight.blitzRatePercentile), yDefinition: "Blitz Rate", color: .blue)
+                               let insights = try? decoder.decode([APIInsight].self, from: data) {
                                
-                                    dataPoints.append(dataPoint)
-                                    dataIndex = dataIndex + 1
-                                }
-                                
+                                var index = 0
                                 for insight in insights {
                             
-                                    let insightType = InsightType.QbEpaBlitz
+                                    let homeTeam = self.getNFLTeam(team: insight.homeTeamCode!)
+                                    let awayTeam = self.getNFLTeam(team: insight.awayTeamCode!)
                                     
-                                    let insightDesc = "QB effiiciency against the blitz vs defense blitz rate"
-                                    let insightRubric = "Compare QB's EPA per play against the blitz to the defense's blitz rate"
-                                    let insightHeadline = "\(insight.passerName) is elite against the Blitz"
-                                    let insightText = "\(insight.passerName) has a " + String(format: "%.2f", insight.blitzEpa) + " EPA Rating against the Blitz, while the \(insight.defense) defense has a Blitz rate (" + String(format: "%.2f", insight.blitzRate) + ") at near the top of the league"
-                                    let gameTitle = "\(insight.offense) v. \(insight.defense)"
-                                    
-                                    let homeTeam = self.getNFLTeam(team: insight.offense)
-                                    let awayTeam = self.getNFLTeam(team: insight.defense)
-                                    
-                                    
-                                    let xText = insight.passerName
-                                    let yText = insight.defense
-                                    
-                                    let dataPoint = InsightDataPoint(id: 3, xValue: Float(insight.blitzEpa), xCode: "BLITZ_EPA", xText: xText, xPercentile: Float(insight.blitzEpaPercentile), xDefinition: "Blitz EPA", yValue: Float(insight.blitzRate), yCode: "BLITZ_RATE", yText: yText, yPercentile: Float(insight.blitzRatePercentile), yDefinition: "Blitz Rate", color: .orange)
-                                    
-                                    
-                                    let item1 = NarrativeInsight(id: index, position: 1, insightType: insightType, insightDesc: insightDesc, insightRubric: insightRubric, headline: insightHeadline , text: insightText, predictivePower: insight.predictivePower, teamId: 32, players: [2022], gameTitle: gameTitle, game: Game(homeTeam: homeTeam, homeTeamName: self.getTeamName(team: homeTeam), awayTeam: awayTeam, awayTeamName: self.getTeamName(team: awayTeam)), data: dataPoints, compellingScore: 0.88, embedding: "", bets: Array())
+                                    let item1 = NarrativeInsight(id: insight.id, position: index, insightType: InsightType(rawValue: insight.type) ?? InsightType.QbEpaBlitz, insightDesc: insight.description, insightRubric: insight.rubric ?? "", headline: insight.headline , text: insight.text, predictivePower: Double(insight.predictivePower), teamId: 32, players: [2022], gameTitle: insight.gameTitle, game: Game(homeTeam: homeTeam, homeTeamName: self.getTeamName(team: homeTeam), awayTeam: awayTeam, awayTeamName: self.getTeamName(team: awayTeam)), data: [], compellingScore: Float(insight.compellingScore), embedding: "", bets: Array())
                                     
                                     self.items.append(item1)
                                     
                                     index = index + 1
                                 }
-                            } else {
+                            }
+                            else {
                                 //TODO: Handle Error
-                                print ("got an error")
+                              
                             }
                         }
                     }

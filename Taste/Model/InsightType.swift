@@ -7,7 +7,13 @@
 
 import Foundation
 
-enum InsightType {
-    case QbEpaBlitz
-    case WrTargetRateBlitz
+enum InsightType : String{
+    case QbEpaBlitz = "QB_EPA_BLITZ"
+    case QbEpaMan = "QB_EPA_VS_MAN"
+    case WrTargetRateBlitz = "WR_TARGET_RATE_BLITZ"
+    case WrTargetRateMan = "WR_TAR_VS_MAN"
+    case WrSeperationMan = "WR_SEP_VS_MAN"
+    case WrTargetRateZone = "wr_tar_vs_zone"
+    case InjuryStatus = "INJURY_STATUS"
+   
 }

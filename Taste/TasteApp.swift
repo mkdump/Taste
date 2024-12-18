@@ -11,7 +11,12 @@ import SwiftUI
 struct TasteApp: App {
     var body: some Scene {
         WindowGroup {
-            TikTokSwipingBehavior().preferredColorScheme(.dark)
+            //var items = [NarrativeInsight]()
+            
+            //let vm = MainInsightViewModel().getInitialInsights()
+            InsightDiscoveryView().preferredColorScheme(.dark)
+            //TikTokSwipingBehavior().preferredColorScheme(.dark)
+            //MultiScrollView()
         }
     }
 }

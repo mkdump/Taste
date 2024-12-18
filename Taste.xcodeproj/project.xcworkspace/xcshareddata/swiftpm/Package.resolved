@@ -1,5 +1,5 @@
 {
-  "originHash" : "648799f52637ba60cc14d776eaafb642be1255cd01501dac3ab067e013c17a81",
+  "originHash" : "5ea016456bdac740205e5150d80d8b3aa9c52a3872dac4167019a25dacf6561f",
   "pins" : [
     {
       "identity" : "ascollectionview",
@@ -17,6 +17,15 @@
       "state" : {
         "revision" : "073b9671ce2b9b5b96398611427a1f929927e428",
         "version" : "1.3.0"
+      }
+    },
+    {
+      "identity" : "infinite4pager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fatbobman/Infinite4Pager.git",
+      "state" : {
+        "revision" : "423319b95a7fb85ebd469e09c36e1b1219fcdcfe",
+        "version" : "0.3.0"
       }
     }
   ],

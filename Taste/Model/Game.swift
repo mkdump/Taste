@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Game {
+struct Game : Hashable {
     var homeTeam: NFLTeam
     var homeTeamName: String?
     var awayTeam: NFLTeam
