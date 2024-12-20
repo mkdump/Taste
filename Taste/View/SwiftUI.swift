@@ -90,7 +90,6 @@ struct OnPageVisibleModifier: ViewModifier {
       }
   }
 
-  // 根据 pageType 对可见度进行转换
   func valueTransform(_ info: MainPageOffsetInfo) -> Double? {
     let percent = info.mainPagePercent
     switch (pageType, info.direction) {
@@ -115,8 +114,7 @@ struct OnPageVisibleModifier: ViewModifier {
 }
 
 extension View {
-  /// 当前视图的可见尺寸比例
-  /// 视图的尺寸为容器尺寸
+
   @ViewBuilder
   public func onPageVisible(_ perform: @escaping (Double?) -> Void) -> some View {
     modifier(OnPageVisibleModifier(perform: perform))

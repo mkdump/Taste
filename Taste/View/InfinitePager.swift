@@ -18,27 +18,24 @@ public struct InfinitePager<Content: View>: View {
   @State private var cancelByDrag = false
   private let edgeBouncyAnimation: Animation = .smooth
 
-  /// 横向总视图数量，nil 为无限
   let totalHorizontalPage: Int?
-  /// 纵向总视图数量，nil 为无限
+
   let totalVerticalPage: Int?
-  /// 横向翻页位移阈值，松开手指后，预测距离超过容器宽度的百分比，超过即翻页
+
   let horizontalThresholdRatio: CGFloat
-  /// 纵向翻页位移阈值，松开手指后，预测距离超过容器高度的百分比，超过即翻页
+
   let verticalThresholdRatio: CGFloat
-  /// 一个闭包，用于生成对应单元格的页面，参数为当前单元格的横竖位置
+
   let getPage: (Int, Int) -> Content
-  /// 启用后，将生成更多的站位视图（ 为开启生成 4 个，开启后创建 8 个）。可以改善因滑动速度过快或弹性动画回弹效果过大产生的单元格空隙
+
   let enableClipped: Bool
-  /// 翻页动画
+
   let animation: Animation
-  /// 是否启用视图可见感知
+
   let enablePageVisibility: Bool
 
   public init(
-    /// 初始单元格横向位置
     initialHorizontalPage: Int = 0,
-    /// 初始单元格纵向位置
     initialVerticalPage: Int = 0,
     totalHorizontalPage: Int? = nil,
     totalVerticalPage: Int? = nil,
@@ -137,20 +134,16 @@ public struct InfinitePager<Content: View>: View {
             } completion: {
               if dragDirection == .horizontal {
                 if let total = totalHorizontalPage {
-                  // 有限页面的情况
                   currentHorizontalPage = (currentHorizontalPage + (direction == 1 ? 1 : -1) + total) % total
                 } else {
-                  // 无限滚动的情况
                   currentHorizontalPage += direction == 1 ? 1 : -1
                 }
               }
 
               if dragDirection == .vertical {
                 if let total = totalVerticalPage {
-                  // 有限页面的情况
                   currentVerticalPage = (currentVerticalPage + (direction == 1 ? 1 : -1) + total) % total
                 } else {
-                  // 无限滚动的情况
                   currentVerticalPage += direction == 1 ? 1 : -1
                 }
               }
@@ -166,7 +159,6 @@ public struct InfinitePager<Content: View>: View {
         }
     )
     .onChange(of: isDragging) {
-      // 处理系统对拖动手势的打断
       if !isDragging {
         if !cancelByDrag {
           withAnimation(edgeBouncyAnimation) {
@@ -200,9 +192,6 @@ public struct InfinitePager<Content: View>: View {
     )
   }
 
-  // 根据 container size 和 offset，计算主视图的可见参考值
-  // 0 = 完全可见，横向时, -1 左侧完全移出，+1 右侧完全移出
-  // 纵向时， -1 向上完全移出，+1 向下完全移出
   private func mainPagePercent() -> Double {
     switch dragDirection {
     case .horizontal:
@@ -214,25 +203,20 @@ public struct InfinitePager<Content: View>: View {
     }
   }
 
-  // 判断是否为边界视图
   private func isAtBoundary(direction: Int) -> Bool {
     switch dragDirection {
     case .horizontal:
       if let total = totalHorizontalPage {
-        // 有限水平页面的情况
         return (currentHorizontalPage == 0 && direction < 0) || (currentHorizontalPage == total - 1 && direction > 0)
 
       } else {
-        // 无限水平滚动的情况
         return false
       }
     case .vertical:
       if let total = totalVerticalPage {
-        // 有限垂直页面的情况
         return (currentVerticalPage == 0 && direction < 0) ||
           (currentVerticalPage == total - 1 && direction > 0)
       } else {
-        // 无限垂直滚动的情况
         return false
       }
     case .none:
@@ -253,7 +237,7 @@ public struct InfinitePager<Content: View>: View {
         let absOffset = abs(offset)
         let progress = min(absOffset / maxThreshold, 1.0)
 
-        // 使用更线性的阻尼函数
+        
         let dampeningFactor = 1 - progress * 0.5
 
         let dampendOffset = absOffset * dampeningFactor
