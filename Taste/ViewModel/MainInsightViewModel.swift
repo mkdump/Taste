@@ -152,6 +152,25 @@ class MainInsightViewModel: ObservableObject {
         return insights
     }
     
+    func getInsightDataForScatterPlot(insightId: Int) -> [InsightDataPoint] {
+        var insightDataPoints = [InsightDataPoint]()
+        APIService.shared.getDataPointsForScatterPlot(insightId: insightId)
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    print("Execution Finihsed.")
+                case .failure(let error):
+                    self.currentState = .FAILURE(error: error.localizedDescription)
+                }
+            } receiveValue: { dataPoints in
+                
+                insightDataPoints = dataPoints
+                
+            }.store(in: &cancelables)
+            
+        return insightDataPoints
+    }
+    
     func loadInsights() {
         self.currentState = .LOADING
             APIService.shared.getInsights()

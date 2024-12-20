@@ -14,11 +14,13 @@
 		3056C9762CCF4BE000D489EA /* NFLTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3056C9752CCF4BE000D489EA /* NFLTeam.swift */; };
 		3056C9782CCF4D3C00D489EA /* test-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 3056C9772CCF4D3C00D489EA /* test-response.json */; };
 		3056C97A2CD5A8B100D489EA /* MultiScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3056C9792CD5A8B100D489EA /* MultiScrollView.swift */; };
-		3056C97D2D127D6500D489EA /* Infinite4Pager in Frameworks */ = {isa = PBXBuildFile; productRef = 3056C97C2D127D6500D489EA /* Infinite4Pager */; };
 		3056C97F2D127DA300D489EA /* TwoWayPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3056C97E2D127DA300D489EA /* TwoWayPager.swift */; };
 		3056C9812D12820500D489EA /* Insight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3056C9802D12820500D489EA /* Insight.swift */; };
 		3056C9832D12837200D489EA /* MainInsightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3056C9822D12837200D489EA /* MainInsightViewModel.swift */; };
 		3056C9852D135FBD00D489EA /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3056C9842D135FBD00D489EA /* ApiService.swift */; };
+		3056C9872D1391D700D489EA /* SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3056C9862D1391D700D489EA /* SwiftUI.swift */; };
+		3056C9892D13920000D489EA /* InfinitePager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3056C9882D13920000D489EA /* InfinitePager.swift */; };
+		3056C98B2D13D2CE00D489EA /* NarrativeDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3056C98A2D13D2CE00D489EA /* NarrativeDataPoint.swift */; };
 		30FF12F12CA66A9900776D87 /* TasteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF12F02CA66A9900776D87 /* TasteApp.swift */; };
 		30FF12F32CA66A9900776D87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF12F22CA66A9900776D87 /* ContentView.swift */; };
 		30FF12F52CA66A9B00776D87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30FF12F42CA66A9B00776D87 /* Assets.xcassets */; };
@@ -102,6 +104,9 @@
 		3056C9802D12820500D489EA /* Insight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insight.swift; sourceTree = "<group>"; };
 		3056C9822D12837200D489EA /* MainInsightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInsightViewModel.swift; sourceTree = "<group>"; };
 		3056C9842D135FBD00D489EA /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		3056C9862D1391D700D489EA /* SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI.swift; sourceTree = "<group>"; };
+		3056C9882D13920000D489EA /* InfinitePager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfinitePager.swift; sourceTree = "<group>"; };
+		3056C98A2D13D2CE00D489EA /* NarrativeDataPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarrativeDataPoint.swift; sourceTree = "<group>"; };
 		30FF12ED2CA66A9900776D87 /* Taste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30FF12F02CA66A9900776D87 /* TasteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteApp.swift; sourceTree = "<group>"; };
 		30FF12F22CA66A9900776D87 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -164,7 +169,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				30FF132A2CA67AC800776D87 /* ASCollectionView in Frameworks */,
-				3056C97D2D127D6500D489EA /* Infinite4Pager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +259,7 @@
 				3056C9732CCF4BD500D489EA /* Game.swift */,
 				3056C9752CCF4BE000D489EA /* NFLTeam.swift */,
 				3056C9802D12820500D489EA /* Insight.swift */,
+				3056C98A2D13D2CE00D489EA /* NarrativeDataPoint.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -271,6 +276,8 @@
 				30FF13742CC4A59F00776D87 /* ChartView.swift */,
 				3056C9792CD5A8B100D489EA /* MultiScrollView.swift */,
 				3056C97E2D127DA300D489EA /* TwoWayPager.swift */,
+				3056C9862D1391D700D489EA /* SwiftUI.swift */,
+				3056C9882D13920000D489EA /* InfinitePager.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -346,7 +353,6 @@
 			name = Taste;
 			packageProductDependencies = (
 				30FF13292CA67AC800776D87 /* ASCollectionView */,
-				3056C97C2D127D6500D489EA /* Infinite4Pager */,
 			);
 			productName = Taste;
 			productReference = 30FF12ED2CA66A9900776D87 /* Taste.app */;
@@ -422,7 +428,6 @@
 			mainGroup = 30FF12E42CA66A9900776D87;
 			packageReferences = (
 				30FF13282CA67AC800776D87 /* XCRemoteSwiftPackageReference "ASCollectionView" */,
-				3056C97B2D127D6500D489EA /* XCRemoteSwiftPackageReference "Infinite4Pager" */,
 			);
 			productRefGroup = 30FF12EE2CA66A9900776D87 /* Products */;
 			projectDirPath = "";
@@ -499,6 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30FF13792CCB1A5700776D87 /* QBStats.swift in Sources */,
+				3056C9892D13920000D489EA /* InfinitePager.swift in Sources */,
 				3056C9702CCF4BAE00D489EA /* InsightType.swift in Sources */,
 				30FF13772CCB1A1000776D87 /* WRStats.swift in Sources */,
 				3056C9722CCF4BC200D489EA /* InsightDataPoint.swift in Sources */,
@@ -507,6 +513,7 @@
 				3056C97F2D127DA300D489EA /* TwoWayPager.swift in Sources */,
 				30FF131F2CA6717F00776D87 /* FeedItemCell.swift in Sources */,
 				30FF13712CC473AC00776D87 /* InsightViewModel.swift in Sources */,
+				3056C9872D1391D700D489EA /* SwiftUI.swift in Sources */,
 				30FF136D2CA7E07C00776D87 /* DotsView.swift in Sources */,
 				30FF12F32CA66A9900776D87 /* ContentView.swift in Sources */,
 				30FF13232CA6742800776D87 /* FeedItemViewModel.swift in Sources */,
@@ -523,6 +530,7 @@
 				30FF136F2CC4305A00776D87 /* TikTockSwipe.swift in Sources */,
 				30FF12F12CA66A9900776D87 /* TasteApp.swift in Sources */,
 				30FF137D2CCB1F8700776D87 /* QbEpaBlitzAgainstDefBlitz.swift in Sources */,
+				3056C98B2D13D2CE00D489EA /* NarrativeDataPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -854,14 +862,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3056C97B2D127D6500D489EA /* XCRemoteSwiftPackageReference "Infinite4Pager" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/fatbobman/Infinite4Pager.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.3.0;
-			};
-		};
 		30FF13282CA67AC800776D87 /* XCRemoteSwiftPackageReference "ASCollectionView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apptekstudios/ASCollectionView";
@@ -873,11 +873,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3056C97C2D127D6500D489EA /* Infinite4Pager */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3056C97B2D127D6500D489EA /* XCRemoteSwiftPackageReference "Infinite4Pager" */;
-			productName = Infinite4Pager;
-		};
 		30FF13292CA67AC800776D87 /* ASCollectionView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 30FF13282CA67AC800776D87 /* XCRemoteSwiftPackageReference "ASCollectionView" */;

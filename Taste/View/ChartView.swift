@@ -10,11 +10,12 @@ import Charts
 
 struct ChartView: View {
     let item: NarrativeInsight
+    let dataPoints: [NarrativeDataPoint]
     
     var body: some View {
         
         Chart {
-            ForEach(item.data) { dataPoints in
+            ForEach(dataPoints) { dataPoints in
             
                 PointMark(
                     x: .value(dataPoints.xCode, dataPoints.xValue),

@@ -167,14 +167,14 @@ class InsightViewModel: ObservableObject {
                                 let insights = qbInsights;
                                 
                                 var index = 0
-                                var dataPoints: [InsightDataPoint] = []
+                                var dataPoints: [NarrativeDataPoint] = []
                                 var dataIndex = 0
                                 
                                 for dataInsight in qbInsights {
                                     let xText = dataInsight.passerName
                                     let yText = dataInsight.defense
                                     
-                                    let dataPoint = InsightDataPoint(id: dataIndex, xValue: Float(dataInsight.blitzEpa), xCode: "BLITZ_EPA", xText: xText, xPercentile: Float(dataInsight.blitzEpaPercentile), xDefinition: "Blitz EPA", yValue: Float(dataInsight.blitzRate), yCode: "BLITZ_RATE", yText: yText, yPercentile: Float(dataInsight.blitzRatePercentile), yDefinition: "Blitz Rate", color: .blue)
+                                    let dataPoint = NarrativeDataPoint(id: dataIndex, xValue: Float(dataInsight.blitzEpa), xCode: "BLITZ_EPA", xText: xText, xPercentile: Float(dataInsight.blitzEpaPercentile), xDefinition: "Blitz EPA", yValue: Float(dataInsight.blitzRate), yCode: "BLITZ_RATE", yText: yText, yPercentile: Float(dataInsight.blitzRatePercentile), yDefinition: "Blitz Rate", color: .blue)
                                
                                     dataPoints.append(dataPoint)
                                     dataIndex = dataIndex + 1
@@ -197,7 +197,7 @@ class InsightViewModel: ObservableObject {
                                     let xText = insight.passerName
                                     let yText = insight.defense
                                     
-                                    let dataPoint = InsightDataPoint(id: 3, xValue: Float(insight.blitzEpa), xCode: "BLITZ_EPA", xText: xText, xPercentile: Float(insight.blitzEpaPercentile), xDefinition: "Blitz EPA", yValue: Float(insight.blitzRate), yCode: "BLITZ_RATE", yText: yText, yPercentile: Float(insight.blitzRatePercentile), yDefinition: "Blitz Rate", color: .orange)
+                                    let dataPoint = NarrativeDataPoint(id: 3, xValue: Float(insight.blitzEpa), xCode: "BLITZ_EPA", xText: xText, xPercentile: Float(insight.blitzEpaPercentile), xDefinition: "Blitz EPA", yValue: Float(insight.blitzRate), yCode: "BLITZ_RATE", yText: yText, yPercentile: Float(insight.blitzRatePercentile), yDefinition: "Blitz Rate", color: .orange)
                                     
                                     
                                     let item1 = NarrativeInsight(id: index, position: 1, insightType: insightType, insightDesc: insightDesc, insightRubric: insightRubric, headline: insightHeadline , text: insightText, predictivePower: insight.predictivePower, teamId: 32, players: [2022], gameTitle: gameTitle, game: Game(homeTeam: homeTeam, homeTeamName: self.getTeamName(team: homeTeam), awayTeam: awayTeam, awayTeamName: self.getTeamName(team: awayTeam)), data: dataPoints, compellingScore: 0.88, embedding: "", bets: Array())

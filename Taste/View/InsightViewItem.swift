@@ -9,6 +9,7 @@ import SwiftUI
 
 struct InsightViewItem: View {
     let item: NarrativeInsight
+    let dataPoints: [NarrativeDataPoint]
     
     var header: some View {
         HStack {
@@ -36,7 +37,7 @@ struct InsightViewItem: View {
                 }.padding(.init(top: 0, leading: 14, bottom: 0, trailing: 14))
                 
                 HStack {
-                    Text(item.headline).font(.system(size: 22)).bold().padding(.leading)
+                    Text(item.headline + "(" + String(item.id) + ")").font(.system(size: 22)).bold().padding(.leading)
                     Spacer()
                     Image("graph-up")
                 }
@@ -82,7 +83,7 @@ struct InsightViewItem: View {
         
         VStack{
             header
-            ChartView(item: item)
+            ChartView(item: item, dataPoints: dataPoints)
                 .aspectRatio(contentMode: .fit)
                 .padding(.init(top: 10, leading: 14, bottom: 10, trailing: 14))
             actionButtons

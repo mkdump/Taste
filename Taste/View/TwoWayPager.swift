@@ -6,36 +6,39 @@
 //
 
 import SwiftUI
-import Infinite4Pager
+import Combine
 
 struct InsightDiscoveryView: View {
     @State private var viewModel = MainInsightViewModel()
     
     var body: some View {
-        Infinite4Pager(
-            initialHorizontalPage: 2,
-            initialVerticalPage: 2,
+        InfinitePager(
+            initialHorizontalPage: 0,
+            initialVerticalPage: 0,
             totalHorizontalPage: nil,
             totalVerticalPage: nil,
             enableClipped: false,
             enablePageVisibility: true,
             getPage: { h, v in
-                PageView2(viewModel: viewModel, h: h, v: v)
+                
+                DynamicPage(viewModel: viewModel, h: h, v: v)
             }
         )
         .ignoresSafeArea()
     }
 }
 
-struct PageView2: View {
+struct DynamicPage: View {
     let viewModel: MainInsightViewModel
     let h: Int
     let v: Int
+    
     let images = ["arizona-cardinals-logo", "baltimore-ravens-logo", "indianapolis-colts-logo", "los-angeles-chargers-logo", "minnesota-vikings-logo"]
     @Environment(\.pagerCurrentPage) var mainPage
     @State var percent: Double = 0
     @State var isCurrent = false
-    
+    @State var dataPoints: [NarrativeDataPoint]  = []
+    @State var currentInsightItem: NarrativeInsight? = nil
     
     var body: some View {
         VStack {
@@ -52,11 +55,35 @@ struct PageView2: View {
                                     )
                                
                             if case .LOADING = viewModel.currentState {
-                                            
+                                            VStack(alignment: .center) {
+                                                Spacer()
+                                                Text("Swipe to begin...")
+                                                    .font(.headline.bold())
+                                                    .multilineTextAlignment(.center)
+                                                Spacer()
+                                            }
+                                            .padding()
                                         } else if case .SUCCESS(let items) = viewModel.currentState {
                                             let index = abs((h + v) % (items.count - 1))
                                             
-                                            InsightViewItem(item: items[index])
+                                            //print("loaded (" + h + "," + v + ")")
+                                            let currentInsightItem = items[index]
+                                            InsightViewItem(item: currentInsightItem, dataPoints: dataPoints)
+                                                .overlay(
+                                                      VStack {
+                                                        Text("\(h),\(v)")
+                                                        Text("visibility \(percent)")
+                                                        Text("isCurrent:\(isCurrent)")
+                                                      }
+                                                      .font(.largeTitle)
+                                                      .foregroundStyle(.white)
+                                                      .padding()
+                                                      .background(
+                                                        RoundedRectangle(cornerRadius: 15)
+                                                          .foregroundColor(.black)
+                                                      )
+                                                )
+                                            
                                         } else if case .FAILURE(let error) = viewModel.currentState {
                                             VStack(alignment: .center) {
                                                 Spacer()
@@ -74,12 +101,32 @@ struct PageView2: View {
                 .onPageVisible { percent in
                     if let percent {
                         self.percent = percent
+                            APIService.shared.getDataPointsForScatterPlot(insightId: 4979)
+                            .sink { completion in
+                                switch completion {
+                                case .finished:
+                                    print("Execution Finihsed.")
+                                case .failure(let error):
+                                   print("error")
+                                }
+                            } receiveValue: { items in
+                                dataPoints = [NarrativeDataPoint]()
+                                var index = 0
+                                items.forEach { insight in
+                                    
+                                    let newDataPoint = NarrativeDataPoint(id: index, xValue: Float(insight.xValue), xCode: insight.xCode, xText: insight.xText, xPercentile: Float(insight.xPercentile), xDefinition: insight.xDefinition, yValue: Float(insight.yValue), yCode: insight.yCode, yText: insight.yText, yPercentile: Float(insight.yPercentile), yDefinition: insight.yDefinition, color: Color.black)
+                                    index = index + 1
+                                    
+                                    dataPoints.append(newDataPoint)
+                                }
+                            }
                     }
                 }
                 .task(id: mainPage) {
                     if let mainPage {
                         if mainPage.horizontal == h, mainPage.vertical == v {
                             isCurrent = true
+                            
                         }
                     }
                 }

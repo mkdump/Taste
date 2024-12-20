@@ -24,7 +24,7 @@ struct NarrativeInsight : Identifiable, Hashable {
     let players: [Int]
     let gameTitle: String
     let game: Game
-    let data: [InsightDataPoint]
+    let data: [NarrativeDataPoint]
     let compellingScore: Float
     let embedding: String
     let bets: Array<String>

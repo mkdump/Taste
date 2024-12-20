@@ -25,7 +25,7 @@ struct TikTokSwipingBehavior: View {
                                 height: UIScreen.main.bounds.height
                                 )
                            
-                        InsightViewItem(item: item)
+                        InsightViewItem(item: item, dataPoints: [])
                     }
                 }
             }
