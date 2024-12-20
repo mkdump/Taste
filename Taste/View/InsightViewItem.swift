@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InsightViewItem: View {
     let item: NarrativeInsight
-    let dataPoints: [NarrativeDataPoint]
+    @State var dataPoints: [NarrativeDataPoint]
     
     var header: some View {
         HStack {
@@ -89,7 +89,49 @@ struct InsightViewItem: View {
             actionButtons
 
         }
+        .onAppear(){
+            fetchRemoteData()
+        }
     }
+    
+    private func fetchRemoteData() {
+        let url = URL(string: "http://localhost:3000/scatterplot?insightid=" + String(4979))!
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"  // optional
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+            let task = URLSession.shared.dataTask(with: request){ data, response, error in
+                if let error = error {
+                    print("Error while fetching data:", error)
+                    return
+                }
+
+                guard let data = data else {
+                    return
+                }
+
+                do {
+                    let insightDataPoints = try JSONDecoder().decode([InsightDataPoint].self, from: data)
+                    
+                    var _dataPoints = [NarrativeDataPoint]()
+                    var index = 0
+                    insightDataPoints.forEach { insight in
+                        
+                        let newDataPoint = NarrativeDataPoint(id: index, xValue: Float(insight.xValue), xCode: insight.xCode, xText: insight.xText, xPercentile: Float(insight.xPercentile), xDefinition: insight.xDefinition, yValue: Float(insight.yValue), yCode: insight.yCode, yText: insight.yText, yPercentile: Float(insight.yPercentile), yDefinition: insight.yDefinition, color: Color.black)
+                        index = index + 1
+                        
+                        _dataPoints.append(newDataPoint)
+                    }
+                    
+                    // Assigning the data to the array
+                    self.dataPoints = _dataPoints
+                } catch let jsonError {
+                    print("Failed to decode json", jsonError)
+                }
+            }
+
+            task.resume()
+        }
     
     func getImageName(team: NFLTeam) -> String {
         var imageName: String = ""

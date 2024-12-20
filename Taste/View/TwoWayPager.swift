@@ -72,10 +72,8 @@ struct DynamicPage: View {
                                                 .overlay(
                                                       VStack {
                                                         Text("\(h),\(v)")
-                                                        Text("visibility \(percent)")
-                                                        Text("isCurrent:\(isCurrent)")
                                                       }
-                                                      .font(.largeTitle)
+                                                        .font(.caption)
                                                       .foregroundStyle(.white)
                                                       .padding()
                                                       .background(
@@ -101,25 +99,6 @@ struct DynamicPage: View {
                 .onPageVisible { percent in
                     if let percent {
                         self.percent = percent
-                            APIService.shared.getDataPointsForScatterPlot(insightId: 4979)
-                            .sink { completion in
-                                switch completion {
-                                case .finished:
-                                    print("Execution Finihsed.")
-                                case .failure(let error):
-                                   print("error")
-                                }
-                            } receiveValue: { items in
-                                dataPoints = [NarrativeDataPoint]()
-                                var index = 0
-                                items.forEach { insight in
-                                    
-                                    let newDataPoint = NarrativeDataPoint(id: index, xValue: Float(insight.xValue), xCode: insight.xCode, xText: insight.xText, xPercentile: Float(insight.xPercentile), xDefinition: insight.xDefinition, yValue: Float(insight.yValue), yCode: insight.yCode, yText: insight.yText, yPercentile: Float(insight.yPercentile), yDefinition: insight.yDefinition, color: Color.black)
-                                    index = index + 1
-                                    
-                                    dataPoints.append(newDataPoint)
-                                }
-                            }
                     }
                 }
                 .task(id: mainPage) {

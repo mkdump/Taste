@@ -12,7 +12,7 @@ class APIService {
     static let shared = APIService()
     
     func getInsights() -> AnyPublisher<[APIInsight], Error> {
-        guard let url = URL(string: "https://18.119.1.8:3000/insights?week=16") else {
+        guard let url = URL(string: "http://localhost:3000/insights?week=16") else {
             return Fail(error: "Unable to generate url" as! Error).eraseToAnyPublisher()
         }
         return Future { promise in
@@ -33,7 +33,7 @@ class APIService {
     }
     
     func getDataPointsForScatterPlot(insightId: Int) -> AnyPublisher<[InsightDataPoint], Error> {
-        guard let url = URL(string: "https://18.119.1.8:3000/scatterplot?insightid=" + String(insightId)) else {
+        guard let url = URL(string: "http://localhost:3000/scatterplot?insightid=" + String(insightId)) else {
             return Fail(error: "Unable to generate url" as! Error).eraseToAnyPublisher()
         }
         return Future { promise in
